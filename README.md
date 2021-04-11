@@ -1,2 +1,7 @@
 # scallop-ts
-ts用法
+
+ts 用法
+
+# 安装
+
+npm i -g typescript
