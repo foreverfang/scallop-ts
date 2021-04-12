@@ -38,3 +38,20 @@ function fn1(): void { }
 function fn2(): never {
     throw new Error('报错了')
 }
+
+let a1: object
+a1 = {}
+a1 = function () { }
+
+// {} 用来指定对象中可以包含哪些属性
+// 属性名后面加上?，表示属性是可选的
+let b1: { name: string, age?: number }
+// b1 = {}
+// b1 = { name: 'fang', age: 18}
+b1 = { name: 'fang' }
+
+// [propname: string]: any 任意类型的属性
+let b22: { name: string, [propname: string]: any }
+b22 = { name: "fang1", age: 19, address: 'wuhan' }
+
+let b3: (a: number, b: number) => number
