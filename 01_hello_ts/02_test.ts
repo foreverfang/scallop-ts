@@ -54,4 +54,59 @@ b1 = { name: 'fang' }
 let b22: { name: string, [propname: string]: any }
 b22 = { name: "fang1", age: 19, address: 'wuhan' }
 
+// 设置函数结构的类型声明
+// 语法：(形参:类型, 形参:类型 ...) => 返回值
 let b3: (a: number, b: number) => number
+
+// b3 = function (a: number, b: number): number {
+//     return a + b
+// }
+
+// let bbb: { name: string, [propname: string]: any }
+
+// 数组类型声明
+//   1.类型[]
+//   2.Array<类型>
+// string[] 字符串数组
+let arr1: string[]
+arr1 = ['sss', 'a']
+// number[] 数值数组
+let arr2: number[]
+let arr3: Array<number>
+arr3 = [1, 2, 3]
+
+
+/**
+ *  元组：固定长度的数组
+*/
+let h: [string, number]
+h = ['aaa', 222]
+
+/**
+ *  enum: 枚举
+ *
+ */
+
+enum Gender {
+    male = 1,
+    female = 0
+}
+
+let i: { name: string, gender: Gender }
+i = {
+    name: 'fang',
+    gender: Gender.male
+}
+
+let j: string | number
+
+let j1: { name: string } & { age: number }
+j1 = {
+    name: 'fang',
+    age: 18
+}
+
+// 类型的别名
+type myType = 1 | 2 | 3 | 4 | 5
+let k1: myType
+let k2: myType
