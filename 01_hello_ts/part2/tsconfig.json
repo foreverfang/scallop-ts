@@ -42,6 +42,24 @@
 
         // 将代码合并为一个文件
         // 设置outFile后，所有的全局作用域中的代码会合并到同一个文件中 不常用
-        // "outFile": "./dist/app.js"
+        // "outFile": "./dist/app.js",
+
+        // 是否对js文件进行编译，默认false
+        // "allowJs": true,
+        // 是否检查js代码，是否符合语法规范，默认false
+        // "checkJs": true,
+
+        // 是否移除注释
+        "removeComments": true,
+        // 不生成编译后的文件
+        "noEmit": false,
+        // 当有错误时，不生成编译后的文件
+        "noEmitOnError": false,
+        // 用来设置编译后的文件是否使用严格模式，默认false
+        "alwaysStrict": true,
+        // 不允许隐式的any类型
+        "noImplicitAny": false,
+        // 不允许不明确类型的this
+        "noImplicitThis": true
     }
 }
