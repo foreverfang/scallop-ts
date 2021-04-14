@@ -1,6 +1,6 @@
-import { hi } from './m.js'
+// import { hi } from './m.js'
 console.log('src/index.ts')
 let a223 = 18
-console.log(hi)
+console.log(a223)
 
 // document.getElementById('id')
