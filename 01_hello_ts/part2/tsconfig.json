@@ -51,15 +51,27 @@
 
         // 是否移除注释
         "removeComments": true,
+
         // 不生成编译后的文件
         "noEmit": false,
+
         // 当有错误时，不生成编译后的文件
         "noEmitOnError": false,
+
+        // 所有严格检查的总开关
+        "strict": true,
+
         // 用来设置编译后的文件是否使用严格模式，默认false
         "alwaysStrict": true,
+
         // 不允许隐式的any类型
         "noImplicitAny": false,
+
         // 不允许不明确类型的this
-        "noImplicitThis": true
+        "noImplicitThis": false,
+
+        // 严格的检查空值
+        "strictNullChecks": true,
+
     }
 }
