@@ -18,8 +18,16 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './src/index.html')
+          // title: 'hello fang',
+            template: path.resolve(__dirname, './src/index.html'),
         })
     ],
-    mode: 'development'
+    mode: 'development',
+    devServer: {
+      contentBase: path.resolve(__dirname, 'dist'),
+      compress: true,
+      port: 3000,
+      open: true,
+      hot: true
+    }
 }
