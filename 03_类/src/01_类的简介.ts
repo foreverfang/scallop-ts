@@ -13,9 +13,6 @@ class Person {
 
   // 在属性前使用static关键字，可以定义类属性（静态属性）
   // static age: number = 19
-  constructor() {
-
-  }
 
   // 以static开头，表示静态方法，直接通过类调用Person.sayHelle()
   sayHello(){
