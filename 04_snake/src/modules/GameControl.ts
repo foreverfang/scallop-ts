@@ -14,6 +14,9 @@ class GameControl{
   // 用来存储蛇的移动方向（也就是按键的方向）
   direction: string = ''
 
+  // 记录游戏是否结束
+  isLive = true
+
   constructor(){
     this.snake = new Snake()
     this.food = new Food()
@@ -87,14 +90,39 @@ class GameControl{
         break;
     }
 
-    // 修改蛇的移动坐标
-    this.snake.X = X
-    this.snake.Y = Y 
+    // 检查蛇是否吃到了食物
+    this.checkEat(X, Y)
+
+    // 修改蛇的移动坐标 捕获蛇类抛出的异常
+    try{
+      this.snake.X = X
+      this.snake.Y = Y 
+    }catch(err){
+      // 进入catch，说明出现了异常，游戏结束，弹出提示消息
+      alert(err.message + 'GAME OVER')
+      // 结束游戏
+      this.isLive = false;
+    }
 
     // 开启定时调用
-    setTimeout(this.run.bind(this), 300)
+    this.isLive && setTimeout(this.run.bind(this), 300 - (this.scorePanel.level - 1) * 30)
     
   }
+
+
+  // 定义一个方法，用来检查蛇是否吃到食物
+  checkEat(X: number, Y: number){
+    if(X === this.food.X && Y === this.food.Y) {
+      console.log("吃到食物了")
+      // 食物的位置要进行重置
+      this.food.change()
+      // 分数增加
+      this.scorePanel.addScore()
+      // 蛇要增加一节
+      this.snake.addBody()
+    }
+  }
+
 }
 
 export default GameControl
