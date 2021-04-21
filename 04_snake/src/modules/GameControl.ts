@@ -26,8 +26,9 @@ class GameControl{
   init(){
     // this需要指向当前游戏控制器对象
     document.addEventListener("keydown", this.keydownHandler.bind(this))
-    // // 这里调用run方法，使蛇移动，但实际上不会移动，因为初始化时，direction还没有值 
-    // this.run()
+    // 没有定时调用时，实际上蛇不会移动，因为初始化时，direction还没有值，有值也只会移动一次 
+    // // 调用run方法，使蛇移动
+    this.run()
   }
 
   /**
@@ -89,6 +90,9 @@ class GameControl{
     // 修改蛇的移动坐标
     this.snake.X = X
     this.snake.Y = Y 
+
+    // 开启定时调用
+    setTimeout(this.run.bind(this), 300)
     
   }
 }
