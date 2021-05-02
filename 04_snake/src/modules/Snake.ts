@@ -16,7 +16,6 @@ class Snake {
   }
 
   // 获取蛇的坐标（蛇头的坐标）
-
   get X(){
     return this.head.offsetLeft
   }
@@ -25,7 +24,6 @@ class Snake {
     return this.head.offsetTop
   }
 
-  // 待完善
   set X(value: number){
     // 如果新值和就值相同，则不再修改
     if(this.X === value){

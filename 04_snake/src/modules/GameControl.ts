@@ -109,7 +109,6 @@ class GameControl{
     
   }
 
-
   // 定义一个方法，用来检查蛇是否吃到食物
   checkEat(X: number, Y: number){
     if(X === this.food.X && Y === this.food.Y) {
@@ -122,7 +121,6 @@ class GameControl{
       this.snake.addBody()
     }
   }
-
 }
 
 export default GameControl
