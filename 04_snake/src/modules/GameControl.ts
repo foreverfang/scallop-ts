@@ -3,7 +3,7 @@ import ScorePanel from './ScorePanel'
 import Snake from './Snake'
 
 // 定义一个游戏控制器，控制其他所有类
-class GameControl{
+class GameControl {
   // 定义三个属性
   // 蛇
   snake: Snake
@@ -17,7 +17,7 @@ class GameControl{
   // 记录游戏是否结束
   isLive = true
 
-  constructor(){
+  constructor() {
     this.snake = new Snake()
     this.food = new Food()
     this.scorePanel = new ScorePanel()
@@ -97,7 +97,7 @@ class GameControl{
     try{
       this.snake.X = X
       this.snake.Y = Y 
-    }catch(err){
+    }catch(err) {
       // 进入catch，说明出现了异常，游戏结束，弹出提示消息
       alert(err.message + 'GAME OVER')
       // 结束游戏
